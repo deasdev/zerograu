@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zero Grau - Refrigeração e Máquinas</title>
-    
-    <link rel="icon" href="logo.jfif">
-    <link rel="apple-touch-icon" href="logo.jfif">
-    
+    <title>Zero Grau-Refrigeração</title>
+    <link rel="icon" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -15,26 +13,20 @@
 
     <header>
         <nav>
-            <div class="logo">
-                <span class="neon-text">ZERO GRAU</span>
-            </div>
-            <div class="contact-top">
-                <a href="https://wa.me/5524981116021?text=Olá! Vi seu site e gostaria de um orçamento." target="_blank" class="btn-zap">
-                    <i class="fab fa-whatsapp"></i> (24) 98111-6021
-                </a>
-            </div>
+            <div class="logo">ZERO GRAU</div>
+            <a href="https://wa.me/5524981116021" target="_blank" class="btn-zap-topo">
+                <i class="fab fa-whatsapp"></i> (24) 98111-6021
+            </a>
         </nav>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <img src="logo.jfif" alt="Zero Grau Logo" class="main-logo">
-                <h1>MANUTENÇÃO E CONSERTO</h1>
+                <img src="logo.jpg" alt="Zero Grau Logo" class="main-logo">
+                <h1>CONSERTO E MANUTENÇÃO</h1>
                 <p>Ar-Condicionado • Geladeiras • Máquinas de Lavar</p>
-                <a href="https://wa.me/5524981116021?text=Olá! Vi seu site e gostaria de um orçamento." class="cta-button">
-                    SOLICITAR ORÇAMENTO
-                </a>
+                <a href="#orcamento" class="cta-button">SOLICITAR ORÇAMENTO</a>
             </div>
         </section>
 
@@ -44,30 +36,71 @@
                 <div class="card">
                     <i class="fas fa-snowflake icon-service"></i>
                     <h3>Ar-Condicionado</h3>
-                    <p>Instalação, higienização completa e carga de gás.</p>
+                    <p>Limpeza, instalação e recolhimento de gás.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-icicles icon-service"></i>
+                    <i class="fas fa-cube icon-service"></i>
                     <h3>Geladeiras</h3>
-                    <p>Reparos em modelos Frost Free, Side by Side e convencionais.</p>
+                    <p>Reparos especializados e troca de peças.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-tint icon-service"></i>
+                    <i class="fas fa-sync icon-service"></i>
                     <h3>Máquinas de Lavar</h3>
-                    <p>Conserto de mecânica, placa eletrônica e vazamentos.</p>
+                    <p>Manutenção completa em todas as marcas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-financeiro">
+            <div class="container">
+                <h3>Informações de Serviço</h3>
+                <div class="grid-info">
+                    <div class="info-box">
+                        <strong>Orçamento: R$ 100,00</strong>
+                        <p>Descontado caso o serviço seja aprovado.</p>
+                    </div>
+                    <div class="info-box">
+                        <strong>Mão de obra: R$ 250,00</strong>
+                        <p>Valor base (pode variar conforme o serviço).</p>
+                    </div>
+                    <div class="info-box">
+                        <strong>Taxa de deslocamento: R$ 50,00</strong>
+                        <p>Para distâncias acima de 1 km.</p>
+                    </div>
+                </div>
+                <div class="detalhes-extras">
+                    <p>• Peças e materiais são de responsabilidade do cliente.</p>
+                    <p>• Pagamento: PIX ou dinheiro na chegada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="orcamento" class="budget-section">
+            <div class="form-container">
+                <h2>Peça seu Orçamento</h2>
+                <div class="form-group">
+                    <input type="text" id="aparelho" placeholder="Qual o aparelho?">
+                    <input type="text" id="modelo" placeholder="Marca e Modelo (Se souber)">
+                    <textarea id="defeito" placeholder="Qual o problema dele?"></textarea>
+                    <button onclick="enviarWhatsApp()" class="btn-enviar">ENVIAR VIA WHATSAPP</button>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Zero Grau &copy; 2024 - Todos os direitos reservados.</p>
-        <p>Resende e Região</p>
+        <p>Zero Grau &copy; 2024 - Qualidade em Refrigeração</p>
     </footer>
 
-    <a href="https://wa.me/5524981116021" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
+    <script>
+        function enviarWhatsApp() {
+            const aparelho = document.getElementById('aparelho').value;
+            const modelo = document.getElementById('modelo').value;
+            const defeito = document.getElementById('defeito').value;
+            if(!aparelho) return alert("Informe o aparelho");
+            const msg = `Olá! Gostaria de um orçamento:%0A*Aparelho:* ${aparelho}%0A*Modelo:* ${modelo}%0A*Defeito:* ${defeito}`;
+            window.open(`https://wa.me/5524981116021?text=${msg}`, '_blank');
+        }
+    </script>
 </body>
 </html>
